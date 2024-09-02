@@ -1,0 +1,16 @@
+{
+    "since": "Depuis {{value}} {{unit}}",
+    "ago": "Il y a {{value}} {{unit}}",
+    "days": "jours",
+    "day": "jour",
+    "hours": "heures",
+    "hour": "heure",
+    "minutes": "minutes",
+    "minute": "minute",
+    "secondes": "seconde",
+    "seconde": "seconde",
+    "years": "années",
+    "year": "année",
+    "months": "months",
+    "month": "month"
+}

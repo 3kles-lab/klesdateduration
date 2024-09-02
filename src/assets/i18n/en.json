@@ -1,0 +1,4 @@
+{
+    "since": "Since {{value}} {{unit}}",
+    "ago": "{{value}} {{unit}} ago"
+}
