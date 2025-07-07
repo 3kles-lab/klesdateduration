@@ -1,6 +1,20 @@
 {
   "name": "@3kles/kles-date-duration",
-  "version": "17.0.0",
+  "version": "17.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/3kles-lab/kles-date-duration"
+  },
+  "keywords": [
+    "3KLES",
+    "Angular"
+  ],
+  "author": "3Kles Lab",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/3kles-lab/kles-date-duration/issues"
+  },
+  "homepage": "https://github.com/3kles-lab/kles-date-duration",
   "peerDependencies": {
     "@angular/common": "^17.0.2",
     "@angular/core": "^17.0.2",
@@ -13,7 +27,5 @@
   "main": "karma.conf.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+  }
 }

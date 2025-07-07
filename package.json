@@ -1,6 +1,20 @@
 {
   "name": "@3kles/kles-date-duration",
-  "version": "17.0.0",
+  "version": "17.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/3kles-lab/kles-date-duration"
+  },
+  "keywords": [
+    "3KLES",
+    "Angular"
+  ],
+  "author": "3Kles Lab",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/3kles-lab/kles-date-duration/issues"
+  },
+  "homepage": "https://github.com/3kles-lab/kles-date-duration",
   "scripts": {
     "build:lib": "ng build kles-date-duration --configuration production",
     "publish:lib": "cd dist/kles-date-duration && npm publish --registry 'http://192.168.111.61:8081/repository/npm-3kles/'  --force",
@@ -52,5 +66,4 @@
     "tslint": "~6.1.0",
     "typescript": "~5.2.2"
   }
-
 }
