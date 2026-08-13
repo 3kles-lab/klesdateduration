@@ -1,3 +1,13 @@
+# [20.0.0](http://gitlab.3kles.local/3kles/lib/angular/klesdateduration/compare/v19.0.0...v20.0.0) (2026-08-13)
+
+
+* feat!: Update to Angular 20 ([72d48ab](http://gitlab.3kles.local/3kles/lib/angular/klesdateduration/commit/72d48ab5625bd237445e277309d463d911dc893b))
+
+
+### BREAKING CHANGES
+
+* Angular 20 is now required.
+
 # [19.0.0](http://gitlab.3kles.local/3kles/lib/angular/klesdateduration/compare/v18.0.0...v19.0.0) (2026-08-13)
 
 
