@@ -1,10 +1,11 @@
 import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
-import { APP_INITIALIZER, ApplicationConfig, importProvidersFrom } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom, inject, provideAppInitializer } from '@angular/core';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { DateDurationIntl } from 'dist/kles-date-duration';
+import { Observable } from 'rxjs';
 import { DateDurationI18n } from './date-duration-I18n';
 
 registerLocaleData(localeFr);
@@ -13,14 +14,11 @@ export function httpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
-export function initializeTranslations(translateService: TranslateService): () => Promise<void> {
-    return () => new Promise<void>((resolve, reject) => {
+export function initializeTranslations(translateService: TranslateService): () => Observable<unknown> {
+    return () => {
         translateService.setDefaultLang('fr');
-        translateService.use('fr').subscribe({
-            next: () => resolve(),
-            error: error => reject(error)
-        });
-    });
+        return translateService.use('fr');
+    };
 }
 
 export function dateDurationIntlFactory(translateService: TranslateService): DateDurationIntl {
@@ -39,12 +37,10 @@ export const appConfig: ApplicationConfig = {
             }
         })),
         provideHttpClient(withInterceptorsFromDi()),
-        {
-            provide: APP_INITIALIZER,
-            useFactory: initializeTranslations,
-            deps: [TranslateService],
-            multi: true
-        },
+        provideAppInitializer(() => {
+            const initializerFn = (initializeTranslations)(inject(TranslateService));
+            return initializerFn();
+        }),
         {
             provide: DateDurationIntl,
             useFactory: dateDurationIntlFactory,
