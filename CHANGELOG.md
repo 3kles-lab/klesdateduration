@@ -1,3 +1,13 @@
+# [22.0.0](http://gitlab.3kles.local/3kles/lib/angular/klesdateduration/compare/v21.0.0...v22.0.0) (2026-08-13)
+
+
+* feat!: Update to Angular 22 ([a5c7493](http://gitlab.3kles.local/3kles/lib/angular/klesdateduration/commit/a5c7493744933715ef06dc0d01da362336bc7d5b))
+
+
+### BREAKING CHANGES
+
+* Angular 22 is now required.
+
 # [21.0.0](http://gitlab.3kles.local/3kles/lib/angular/klesdateduration/compare/v20.0.0...v21.0.0) (2026-08-13)
 
 
