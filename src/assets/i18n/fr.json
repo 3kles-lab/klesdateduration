@@ -7,10 +7,10 @@
     "hour": "heure",
     "minutes": "minutes",
     "minute": "minute",
-    "secondes": "seconde",
-    "seconde": "seconde",
+    "seconds": "secondes",
+    "second": "seconde",
     "years": "années",
     "year": "année",
-    "months": "months",
-    "month": "month"
+    "months": "mois",
+    "month": "mois"
 }
