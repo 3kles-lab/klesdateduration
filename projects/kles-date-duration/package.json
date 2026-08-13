@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/3kles-lab/kles-date-duration",
   "peerDependencies": {
-    "@angular/core": "^21.2.19",
+    "@angular/core": "^22.1.1",
     "luxon": "^3.2.1"
   },
   "dependencies": {

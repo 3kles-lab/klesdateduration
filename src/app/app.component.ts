@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
-import { KlesDateDurationModule } from 'dist/kles-date-duration';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { DateTime } from 'luxon';
+import { KlesDateDurationModule } from 'kles-date-duration';
 
 @Component({
     selector: 'app-root',
     imports: [KlesDateDurationModule],
     templateUrl: './app.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {

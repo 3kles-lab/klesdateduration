@@ -1,10 +1,10 @@
-import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { ApplicationConfig, importProvidersFrom, inject, provideAppInitializer } from '@angular/core';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { DateDurationIntl } from 'dist/kles-date-duration';
+import { DateDurationIntl } from 'kles-date-duration';
 import { Observable } from 'rxjs';
 import { DateDurationI18n } from './date-duration-I18n';
 
@@ -36,7 +36,7 @@ export const appConfig: ApplicationConfig = {
                 deps: [HttpClient]
             }
         })),
-        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClient(withXhr(), withInterceptorsFromDi()),
         provideAppInitializer(() => {
             const initializerFn = (initializeTranslations)(inject(TranslateService));
             return initializerFn();

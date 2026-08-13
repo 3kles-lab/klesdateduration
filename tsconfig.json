@@ -1,7 +1,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "esModuleInterop": true,
@@ -15,19 +14,19 @@
       "node_modules/@types"
     ],
     "paths": {
-      "kles-material-dynamicforms": [
-        "dist/kles-material-dynamicforms/kles-material-dynamicforms",
-        "dist/kles-material-dynamicforms"
+      "kles-date-duration": [
+        "./dist/kles-date-duration/kles-date-duration",
+        "./dist/kles-date-duration"
       ],
-      "kles-material-dynamicforms/*": [
-        "dist/kles-material-dynamicforms/kles-material-dynamicforms",
-        "dist/kles-material-dynamicforms"
+      "kles-date-duration/*": [
+        "./dist/kles-date-duration/kles-date-duration",
+        "./dist/kles-date-duration"
       ]
     },
     "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
+    "strictTemplates": true,
     "strictInjectionParameters": true
   }
 }
