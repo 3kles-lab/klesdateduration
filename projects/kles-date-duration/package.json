@@ -16,15 +16,13 @@
   },
   "homepage": "https://github.com/3kles-lab/kles-date-duration",
   "peerDependencies": {
-    "@angular/common": "^17.0.2",
-    "@angular/core": "^17.0.2",
+    "@angular/core": "^18.2.14",
     "luxon": "^3.2.1"
   },
   "dependencies": {
     "tslib": "^2.0.0"
   },
   "description": "This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.3.",
-  "main": "karma.conf.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   }

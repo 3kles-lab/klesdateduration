@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import localeFr from '@angular/common/locales/fr';
 import { CommonModule, registerLocaleData } from '@angular/common';
 import { DateDurationIntl, KlesDateDurationModule } from 'dist/kles-date-duration';
@@ -14,46 +14,36 @@ import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-transla
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 registerLocaleData(localeFr);
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    CommonModule,
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    KlesDateDurationModule,
-    TranslateModule.forRoot(
-      {
-        defaultLanguage: 'fr',
-        useDefaultLang: true,
-        loader: {
-          provide: TranslateLoader,
-          useFactory: (HttpLoaderFactory),
-          deps: [HttpClient]
-        }
-      }
-    ),
-
-  ],
-  bootstrap: [AppComponent],
-  providers: [
-    {
-      provide: APP_INITIALIZER,
-      useFactory: startupServiceFactory,
-      deps: [TranslateService],
-      multi: true
-    },
-    {
-      provide: DateDurationIntl,
-      deps: [TranslateService],
-      useFactory: (translateService: TranslateService) => new DateDurationI18n(translateService).getDateDurationIntl()
-    },
-
-  ]
-})
+@NgModule({ declarations: [
+        AppComponent
+    ],
+    bootstrap: [AppComponent], imports: [CommonModule,
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        KlesDateDurationModule,
+        TranslateModule.forRoot({
+            defaultLanguage: 'fr',
+            useDefaultLang: true,
+            loader: {
+                provide: TranslateLoader,
+                useFactory: (HttpLoaderFactory),
+                deps: [HttpClient]
+            }
+        })], providers: [
+        {
+            provide: APP_INITIALIZER,
+            useFactory: startupServiceFactory,
+            deps: [TranslateService],
+            multi: true
+        },
+        {
+            provide: DateDurationIntl,
+            deps: [TranslateService],
+            useFactory: (translateService: TranslateService) => new DateDurationI18n(translateService).getDateDurationIntl()
+        },
+        provideHttpClient(withInterceptorsFromDi()),
+    ] })
 export class AppModule {
 
 }
